@@ -1,0 +1,11 @@
+{
+  "id": "git-status",
+  "name": "Git status",
+  "description": "Branch and uncommitted changes for one repo.",
+  "author": "Orbit",
+  "category": "developers",
+  "run": "run.sh",
+  "args": ["~/Code/my-project"],
+  "interval": 60,
+  "symbol": "arrow.triangle.branch"
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orbit Pro</title>
+<link rel="icon" href="icon-192.png">
+<style>
+  /* Paddle's default payment link: Orbit opens this page with ?_ptxn=…, and Paddle's checkout
+     appears on top of it. */
+  :root { color-scheme: dark; --bg: #0B0A14; --fg: #F4F2FB; --muted: #A29EB8; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 520px; margin: 0 auto; padding: max(40px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 40px max(16px, env(safe-area-inset-left)); text-align: center; }
+  img { width: 72px; height: 72px; border-radius: 18px; }
+  h1 { font-size: 26px; margin: 16px 0 6px; }
+  p { color: var(--muted); margin: 0 0 8px; }
+  ul { text-align: left; color: var(--muted); padding-left: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-512.png" alt="">
+  <h1 id="title">Orbit Pro</h1>
+  <p id="lead">$12 a month. Cancel any time.</p>
+  <ul id="perks">
+    <li>Bots run on Orbit's Claude and ChatGPT, no API keys of your own</li>
+    <li>About $8 of AI use included every month</li>
+    <li>Approve your bots from your phone</li>
+  </ul>
+  <p id="status">Opening checkout…</p>
+</main>
+<script src="config.js"></script>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  const status = document.getElementById("status");
+  const { paddleClientToken, paddleEnvironment } = window.ORBIT;
+  if (!paddleClientToken) {
+    status.textContent = "Checkout isn't set up yet.";
+  } else {
+    if (paddleEnvironment === "sandbox") Paddle.Environment.set("sandbox");
+    Paddle.Initialize({
+      token: paddleClientToken,
+      eventCallback(e) {
+        if (e.name === "checkout.completed") {
+          document.getElementById("title").textContent = "Welcome to Orbit Pro";
+          document.getElementById("lead").textContent = "You can close this page. Orbit on your Mac switches over within a minute.";
+          document.getElementById("perks").hidden = true;
+          status.textContent = "";
+        }
+      },
+    });
+    // With ?_ptxn=… in the address, Paddle opens the checkout for that transaction by itself.
+    if (!new URLSearchParams(location.search).get("_ptxn")) status.textContent = "Open checkout from Orbit: Settings → Accounts → Upgrade.";
+  }
+</script>
+</body>
+</html>

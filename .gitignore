@@ -1,0 +1,10 @@
+.build/
+build/
+.DS_Store
+.swiftpm/
+xcuserdata/
+.claude/launch.json
+.claude/worktrees/
+promo/out/frames/
+promo/out/*.mp4
+promo/work/

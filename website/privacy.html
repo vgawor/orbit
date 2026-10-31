@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit privacy policy</title>
+  <meta name="description" content="How Orbit handles your data: it stays on your Mac.">
+  <meta name="theme-color" content="#0B0A14">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/orbit.js" defer></script>
+  
+</head>
+<body>
+<div class="nav-shell">
+  <nav class="nav glass" aria-label="Main">
+    <a class="brand" href="index.html" aria-label="Orbit home"><span class="app-icon" aria-hidden="true"><orbit-character size="26" color="White" motion="still"></orbit-character></span>orbit</a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="addons.html">Add-ons</a>
+      <a href="index.html#agents">Agents</a>
+      <a href="developers.html">Developers</a>
+      <a href="index.html#pricing">Pricing</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="index.html#download">Download</a>
+  </nav>
+</div>
+<main>
+  <section class="page-hero">
+    <div class="rings" aria-hidden="true" style="top:330px;opacity:.5"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow" style="color:var(--live)">Privacy</span>
+      <h1 style="margin-top:14px">Your day stays on your Mac.</h1>
+      <p class="lead">The short version: Orbit has no account and keeps your data on your Mac. It only talks to services you connect yourself.</p>
+    </div>
+  </section>
+  <section class="pad" style="padding-top:10px">
+    <div class="wrap">
+      <article class="prose glass">
+        <p><i>Last updated [DATE]. This is a draft and isn't legal advice; have it reviewed before you publish.</i></p>
+        <h2>Who we are</h2>
+        <p>Orbit is made by [COMPANY], [ADDRESS], Sweden. Contact: [SUPPORT EMAIL].</p>
+        <h2>What stays on your Mac</h2>
+        <ul>
+          <li>Tasks, notes, the shelf, add-on settings and history are saved in your Mac's Application Support folder.</li>
+          <li>Keys and tokens (Claude, HubSpot, GitHub, 2FA secrets) are stored in the macOS Keychain.</li>
+          <li>Calendar, camera, microphone and screen access are used on your Mac only, for the feature you turned on.</li>
+          <li>What your bots remember (their memory notes) and their reports are saved on your Mac. You can read, edit and delete them in Settings → Bots.</li>
+        </ul>
+        <h2>What leaves your Mac, and only if you turn it on</h2>
+        <ul>
+          <li><b>Smart Ask and AI add-ons</b> send the text you ask about to Anthropic's Claude API, using your own API key.</li>
+          <li><b>HubSpot tasks</b> talk to HubSpot with your token. <b>GitHub</b> features talk to GitHub with your token.</li>
+          <li><b>Agents</b> run Claude Code on your Mac, under your own Claude Code login.</li>
+          <li><b>Bots with your own keys</b> run at Anthropic (Claude, in Anthropic's cloud) or OpenAI (ChatGPT). When a bot asks, Orbit sends it only what that question needs: today's meetings and tasks, one meeting's attendees, matching notes, HubSpot details, or the emails a mail bot reads. Bots that search the web do so through Anthropic's or OpenAI's search. Their privacy terms apply.</li>
+          <li><b>Bots with Orbit Pro</b> send the same requests through Orbit's server to Anthropic or OpenAI, using Orbit's keys. The server records which bots and runs are yours and what each run cost, so your plan's AI allowance can be counted. It doesn't keep what the bots read or write.</li>
+          <li><b>Approvals on your phone</b>: while you're signed in, approvals waiting on your Mac (the bot's request and its fields, such as an email draft) are copied to Orbit's server so your phone can show them, and removed after a week. Push notifications go through Apple's or Google's push service.</li>
+          <li>Some add-ons fetch public data: exchange rates (Frankfurter/ECB), crypto prices (CoinGecko), weather (Open-Meteo), Wikipedia, and your public IP (ipify, only when you press the button).</li>
+          <li>Community widgets run scripts you chose to trust; they can contact whatever their author wrote. Only trust widgets you've read.</li>
+        </ul>
+        <h2>Your Orbit account</h2>
+        <p>If you sign in to Orbit (needed for Orbit Pro and approvals on your phone), we keep your email address, your plan and when it renews, and your AI use this month. This is stored with Supabase in the EU (Stockholm). You sign in with a link or code sent by email; there's no password.</p>
+        <h2>Purchases</h2>
+        <p>If you buy Orbit Pro, Paddle handles the payment as merchant of record (they also handle VAT and receipts). We receive your Paddle customer and subscription ids and the subscription's status. We never see your card.</p>
+        <h2>Who processes data for us</h2>
+        <ul>
+          <li>Supabase (Orbit accounts, the phone approvals, the server), EU.</li>
+          <li>Paddle (payments).</li>
+          <li>Anthropic and OpenAI (bots and AI features you turn on).</li>
+          <li>Apple and Google push services (notifications on your phone, if you turn them on).</li>
+        </ul>
+        <h2>Website</h2>
+        <p>This website uses [ANALYTICS], which doesn't use cookies or collect personal data.</p>
+        <h2>Your rights</h2>
+        <p>Under GDPR you can ask what we hold about you (your account email, plan, AI use and any approvals waiting for your phone), correct it or delete it, including deleting your whole account. Write to [SUPPORT EMAIL].</p>
+      </article>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Orbit</span>
+    <nav aria-label="Footer"><a href="addons.html">Add-ons</a><a href="developers.html">Developers</a><a href="press.html">Press</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:[SUPPORT EMAIL]">Support</a></nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build for Orbit</title>
+  <meta name="description" content="Orbit is open source. Make add-ons as a script in any language or in Swift, and get paid when Pro members use them.">
+  <meta name="theme-color" content="#0B0A14">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/orbit.js" defer></script>
+  
+</head>
+<body>
+<div class="nav-shell">
+  <nav class="nav glass" aria-label="Main">
+    <a class="brand" href="index.html" aria-label="Orbit home"><span class="app-icon" aria-hidden="true"><orbit-character size="26" color="White" motion="still"></orbit-character></span>orbit</a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="addons.html">Add-ons</a>
+      <a href="index.html#agents">Agents</a>
+      <a href="developers.html">Developers</a>
+      <a href="index.html#pricing">Pricing</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="index.html#download">Download</a>
+  </nav>
+</div>
+<main>
+  <section class="page-hero">
+    <div class="rings" aria-hidden="true" style="top:330px;opacity:.5"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow" style="color:var(--claude)">Developers</span>
+      <h1 style="margin-top:14px">Build for the notch.</h1>
+      <p class="lead">Orbit is open source. Write a script add-on in any language in ten minutes, or build a full add-on in Swift. The best community add-ons are included in Pro, and their makers get paid.</p>
+    </div>
+  </section>
+  <section class="pad" style="padding-top:20px">
+    <div class="wrap">
+      <div class="grid-3" style="grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr))">
+        <article class="feat card glass">
+          <span class="eyebrow" style="color:var(--o-mint)">Any language</span>
+          <h3 style="font-size:28px">Script add-ons</h3>
+          <p>A folder with a <code>widget.json</code> and a script that prints JSON. Orbit runs it on an interval and shows a Home widget, a tab, a peek chip, and a nudge when you set <code>attention</code>. Shell, Python, Node, Go, anything.</p>
+          <ol class="steps" style="padding:0;margin:8px 0 0">
+            <li>Make a folder in <code>~/Library/Application Support/Orbit/Widgets/</code></li>
+            <li>Add <code>widget.json</code> and an executable script</li>
+            <li>Settings → Add-ons → add it → <b>Trust &amp; run</b></li>
+          </ol>
+        </article>
+        <article class="feat card glass">
+          <span class="eyebrow" style="color:var(--o-purple)">Swift + SwiftUI</span>
+          <h3 style="font-size:28px">Swift add-ons</h3>
+          <p>Full control of the notch panel, timers and macOS APIs. Conform to <code>AddOnModule</code>, use the glass design pieces, and open a pull request. Add-ons ship to everyone in the next release.</p>
+          <ol class="steps" style="padding:0;margin:8px 0 0">
+            <li>Fork the repo, add a class in <code>Viktor/Modules/AddOns/&lt;Category&gt;/</code></li>
+            <li>Render it with <code>--snapshot</code> and add tests</li>
+            <li>Open a pull request; we review within a week</li>
+          </ol>
+        </article>
+      </div>
+
+      <div class="agents" style="margin-top:60px">
+        <div style="flex:1 1 380px;display:flex;flex-direction:column;gap:14px">
+          <h2 class="h2" style="font-size:clamp(32px,4vw,48px)">An add-on in two files.</h2>
+          <p class="lead">This one shows your battery in the peek and nudges you below 10&nbsp;%. It ships with Orbit as an example, next to Hacker News (Python) and Git status.</p>
+        </div>
+        <div style="flex:1 1 480px;min-width:0">
+          <div class="terminal">
+            <div class="bar-top"><span style="background:#FF5F57"></span><span style="background:#FEBC2E"></span><span style="background:#28C840"></span></div>
+            <pre><span class="c-mute"># widget.json</span>
+{ <span class="c-p">"id"</span>: "battery", <span class="c-p">"name"</span>: "Battery",
+  <span class="c-p">"category"</span>: "productivity", <span class="c-p">"run"</span>: "run.sh",
+  <span class="c-p">"interval"</span>: 120, <span class="c-p">"symbol"</span>: "battery.75percent" }
+
+<span class="c-mute"># run.sh prints</span>
+{ <span class="c-p">"title"</span>: "Battery", <span class="c-p">"value"</span>: "84%",
+  <span class="c-p">"subtitle"</span>: "discharging · 3:12 left",
+  <span class="c-p">"progress"</span>: 0.84, <span class="c-p">"chip"</span>: "84%" }</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:110px">
+        <span class="eyebrow" style="color:var(--attention)">Get paid</span>
+        <h2 class="h2">Good add-ons earn money.</h2>
+        <p class="lead">Community Pro add-ons are included for every Pro member. Each month 30&nbsp;% of Pro revenue goes into a pool, shared by how many Pro members use each add-on. Paid one-off add-ons come later, with 80&nbsp;% to you.</p>
+      </div>
+      <div class="grid-3">
+        <article class="feat card glass"><h3>Open source</h3><p>The app and SDK are Apache-2.0. Pro add-ons are source-available, so anyone can read what runs on their Mac.</p></article>
+        <article class="feat card glass"><h3>Reviewed and safe</h3><p>No tracking, no ads, asks before changing anything, works offline or fails politely. Script add-ons run only after the person trusts them.</p></article>
+        <article class="feat card glass"><h3>Add-on Jam</h3><p>A two-week build challenge after launch, one theme per category. Winners get lifetime Pro and a spot on the homepage.</p></article>
+      </div>
+      <div class="actions" style="margin-top:44px"><a class="btn btn-primary" href="[REPO URL]">View on GitHub</a><a class="btn btn-glass glass" href="[COMMUNITY URL]">Join the community</a></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Orbit</span>
+    <nav aria-label="Footer"><a href="addons.html">Add-ons</a><a href="developers.html">Developers</a><a href="press.html">Press</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:[SUPPORT EMAIL]">Support</a></nav>
+  </div>
+</footer>
+</body>
+</html>

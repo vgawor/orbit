@@ -1,0 +1,10 @@
+{
+  "id": "battery",
+  "name": "Battery",
+  "description": "Battery level and time left, in the peek.",
+  "author": "Orbit",
+  "category": "productivity",
+  "run": "run.sh",
+  "interval": 120,
+  "symbol": "battery.75percent"
+}

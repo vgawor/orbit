@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit — your whole day, in the Mac notch</title>
+  <meta name="description" content="Orbit turns the MacBook notch into a home for your music, meetings, tasks, focus, files and AI agents. Hover to peek, click to open.">
+  <meta name="theme-color" content="#0B0A14">
+  <meta property="og:title" content="Orbit — your whole day, in the Mac notch">
+  <meta property="og:description" content="Music, meetings, tasks, focus, files and AI agents, one hover away.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/orbit.js" defer></script>
+  <script src="assets/addons.js" defer></script>
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+
+<div class="nav-shell">
+  <nav class="nav glass" aria-label="Main">
+    <a class="brand" href="#top" aria-label="Orbit home"><span class="app-icon" aria-hidden="true"><orbit-character size="26" color="White" motion="still"></orbit-character></span>orbit</a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#addons">Add-ons</a>
+      <a href="#agents">Agents</a>
+      <a href="#bots">Bots</a>
+      <a href="developers.html">Developers</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="#download">Download</a>
+  </nav>
+</div>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="stars" aria-hidden="true">
+      <span style="left:8%;top:160px"></span><span style="left:22%;top:330px;animation-delay:1s"></span>
+      <span style="left:78%;top:190px;animation-delay:.5s"></span><span style="left:91%;top:360px;animation-delay:1.8s"></span>
+      <span style="left:62%;top:120px;animation-delay:2.3s"></span><span style="left:40%;top:250px;animation-delay:1.4s"></span>
+    </div>
+    <div class="rings" aria-hidden="true" style="top:250px"><span></span><span></span><span></span><span></span><span></span></div>
+
+    <div class="wrap hero-copy">
+      <a class="badge glass" href="#agents"><b>New</b>Give Claude Code a job and approve it from the notch</a>
+      <h1>Your whole day, tucked in the notch.</h1>
+      <p class="lead">Music, meetings, tasks, focus, files and your AI agents live in the MacBook notch. Hover to peek. Click to open. When something needs you, the notch tells you.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#download">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download for Mac</a>
+        <a class="btn btn-glass glass" href="#features">See it work</a>
+      </div>
+      <p class="meta">Free to start · macOS 14 or later · works with or without a notch</p>
+    </div>
+
+    <!-- The notch film: hover → peek → open → nudge, on a loop -->
+    <div class="wrap" style="position:relative">
+      <div class="device">
+        <div class="screen film" id="film" data-state="open" role="img" aria-label="The Orbit app: the MacBook notch widens into a peek, opens into a glass panel, and drops down an alert before a meeting">
+          <div class="blob" style="width:520px;height:520px;left:-100px;top:130px;background:#5B3DF5;opacity:.85"></div>
+          <div class="blob" style="width:460px;height:460px;right:-80px;top:-120px;background:#FF6A3D;opacity:.7"></div>
+          <div class="blob" style="width:380px;height:380px;right:120px;bottom:-170px;background:#1FB6FF;opacity:.7"></div>
+          <div class="menubar" aria-hidden="true"><span>Finder</span><span>File</span><span>Edit</span><span>View</span><span class="clock">Tue 14:02</span></div>
+
+          <!-- Peek -->
+          <div class="peek-pill">
+            <span class="peek-l"><i class="art"></i><i class="wave"><b></b><b></b><b></b><b></b><b></b></i></span>
+            <span class="peek-r"><i class="dot" style="background:var(--meeting)"></i>12m</span>
+            <span class="peek-chips"><span>Weekly sync · in 12 min</span><span>2 tasks due today</span></span>
+          </div>
+
+          <!-- Open panel -->
+          <div class="app-panel panel">
+            <div class="app-head">
+              <span class="who"><orbit-character size="30" color="White" motion="idle"></orbit-character>Afternoon, Sam</span>
+              <span class="dots"><span class="glass"></span><span class="glass"></span><span class="glass"></span></span>
+            </div>
+            <div class="tabbar glass">
+              <span class="on glass-hi"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Home</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M10 2h4"/></svg></span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M3 13l3-8h12l3 8v6H3z"/><path d="M3 13h5l1 2h6l1-2h5"/></svg></span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></span>
+            </div>
+            <div class="app-grid">
+              <div class="tile glass span2">
+                <small><i class="ring-dot" style="width:7px;height:7px;background:var(--meeting)"></i>Next meeting · in 12 min</small>
+                <div class="big">Weekly sync</div>
+                <div style="display:flex;gap:6px"><span class="pill-w">Join</span><span class="pill-g glass">Prep</span></div>
+              </div>
+              <div class="tile glass">
+                <small>Focus</small>
+                <div class="num" data-live-timer>17:42</div>
+                <div class="bar"><i style="width:40%;background:var(--o-mint)"></i></div>
+              </div>
+              <div class="tile glass" style="flex-direction:row;align-items:center;gap:10px">
+                <span style="width:40px;height:40px;border-radius:10px;background:#E8603C;flex-shrink:0"></span>
+                <span style="min-width:0"><b style="font-size:12px;display:block">Now playing</b><small>Spotify</small></span>
+              </div>
+              <div class="tile glass opt">
+                <div class="task"><i class="ring-dot" style="box-shadow:inset 0 0 0 1.5px var(--attention)"></i>Send the offer</div>
+                <div class="task"><i class="ring-dot" style="box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)"></i>Call Anna 16:00</div>
+              </div>
+              <div class="tile glass" style="flex-direction:row;align-items:center;gap:8px">
+                <orbit-character size="36" color="Original" motion="working"></orbit-character>
+                <span style="min-width:0"><b style="font-size:12px;display:block">Claude Code</b><small>working…</small></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nudge: meeting alert -->
+          <div class="alert-panel panel">
+            <orbit-character size="50" color="White" mood="wide" motion="nudge" tint="#4C9BFF"></orbit-character>
+            <span style="flex-grow:1;min-width:0"><b style="display:block;font-size:15px">Weekly sync starts in 2 min</b><small style="color:var(--text-2);font-size:12px">Zoom · 4 people</small></span>
+            <span class="pill-g glass hide-sm">Later</span><span class="pill-w">Join</span>
+          </div>
+
+          <div class="notch"></div>
+          <svg class="cursor" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 2-3 6z" fill="#fff" stroke="#000" stroke-width="1.2"/></svg>
+        </div>
+      </div>
+      <div class="film-steps" role="group" aria-label="Show a step">
+        <button class="chip glass" data-step="closed">Hover the notch</button>
+        <button class="chip glass" data-step="peek">Peek</button>
+        <button class="chip glass" data-step="open" aria-pressed="true">Open</button>
+        <button class="chip glass" data-step="nudge">It nudges you</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-label="Music, meetings, tasks, HubSpot, focus, timers, notes, shelf, AirDrop, convert, Smart Ask and agents">
+    <div class="marquee-track" aria-hidden="true" id="marquee"></div>
+  </div>
+
+  <!-- Feature demos -->
+  <section id="features" class="pad" style="padding-bottom:40px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="color:var(--o-pink)">See it work</span>
+        <h2 class="h2">Less tab-switching.<br>More getting on with it.</h2>
+        <p class="lead">Every one of these happens in the notch, without leaving what you're doing.</p>
+      </div>
+
+      <div class="demos">
+        <!-- Meetings -->
+        <article class="demo-card glass reveal">
+          <div class="demo-copy">
+            <span class="eyebrow" style="color:var(--meeting)">Meetings</span>
+            <h3>Two minutes early. Every time.</h3>
+            <p>Before each meeting the notch drops down with a Join button. Zoom and Teams open in their apps; Meet and Webex in your browser.</p>
+          </div>
+          <div class="demo-stage" data-demo="meeting">
+            <div class="mini-screen">
+              <div class="notch"></div>
+              <div class="d-alert panel">
+                <orbit-character size="44" color="White" mood="wide" motion="nudge" tint="#4C9BFF"></orbit-character>
+                <span class="grow"><b data-title>Weekly sync starts in 2 min</b><small data-sub>Zoom · 4 people</small></span>
+                <span class="pill-w" data-join>Join</span>
+              </div>
+              <svg class="cursor" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 2-3 6z" fill="#fff" stroke="#000" stroke-width="1.2"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tasks -->
+        <article class="demo-card glass reveal">
+          <div class="demo-copy">
+            <span class="eyebrow" style="color:var(--live)">Tasks + HubSpot</span>
+            <h3>Type it the way you'd say it.</h3>
+            <p>"Call Anna tomorrow 10" becomes a task with a date and time. Your HubSpot tasks sit in the same list.</p>
+          </div>
+          <div class="demo-stage" data-demo="tasks">
+            <div class="d-tasks">
+              <div class="d-input glass"><span data-typed>Call Anna tomorrow 10</span><i class="caret"></i><span class="plus-btn">+</span></div>
+              <div class="d-list glass">
+                <div class="d-row new" data-new><i class="circle"></i><span class="grow">Call Anna<small>Tomorrow 10:00</small></span><i class="prio" style="background:var(--attention)"></i></div>
+                <div class="d-row"><i class="circle" style="box-shadow:inset 0 0 0 1.5px var(--attention)"></i><span class="grow">Send the offer<small><em class="tag">HubSpot</em> Yesterday</small></span><i class="prio" style="background:var(--error)"></i></div>
+                <div class="d-row done" data-tick><i class="circle"></i><span class="grow">Book the venue<small>Today</small></span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ask -->
+        <article class="demo-card glass reveal">
+          <div class="demo-copy">
+            <span class="eyebrow" style="color:var(--o-pink)">Smart Ask</span>
+            <h3>Ask like you talk.</h3>
+            <p>Orbit uses Claude to add and move tasks, start a focus session or prep you for a meeting. It asks before it changes anything in HubSpot.</p>
+          </div>
+          <div class="demo-stage" data-demo="ask">
+            <div class="d-chat">
+              <div class="bubble-me glass-hi"><span data-typed>Move the offer to Monday 9</span></div>
+              <div class="d-reply" data-reply>
+                <orbit-character size="34" color="White" motion="thinking" data-orbit></orbit-character>
+                <div class="d-card glass">
+                  <span data-thinking class="thinking"><i></i><i></i><i></i></span>
+                  <div data-answer>
+                    <b>Send the offer</b>
+                    <small>Move to Monday 09:00 in HubSpot?</small>
+                    <div class="row"><span class="pill-w" data-ok>Move it</span><span class="pill-g glass">Cancel</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="status-pill" data-done><i class="dot" style="background:var(--live)"></i>Moved in HubSpot</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Shelf -->
+        <article class="demo-card glass reveal">
+          <div class="demo-copy">
+            <span class="eyebrow" style="color:var(--o-mint)">Shelf, AirDrop, Convert</span>
+            <h3>Drop it on the notch.</h3>
+            <p>Drag a file to the top of the screen. Keep it for later, AirDrop it, or turn a photo into a JPEG and a video into an MP4.</p>
+          </div>
+          <div class="demo-stage" data-demo="shelf">
+            <div class="mini-screen">
+              <div class="notch"></div>
+              <div class="d-drop panel">
+                <span class="zone glass-hi" data-zone>Keep on shelf</span><span class="zone glass">AirDrop</span><span class="zone glass">Convert</span>
+              </div>
+              <div class="d-shelf panel">
+                <span class="file-chip glass"><i></i><span data-name>beach.jpg</span></span>
+                <span class="pill-g glass" data-convert>Converted from HEIC</span>
+              </div>
+              <div class="file" data-file>HEIC</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Focus + music -->
+        <article class="demo-card glass reveal">
+          <div class="demo-copy">
+            <span class="eyebrow" style="color:var(--o-sunny)">Timers, Focus, Music</span>
+            <h3>Focus without looking away.</h3>
+            <p>Run several timers at once or focus in rounds. Your playlist plays while you work and pauses on breaks.</p>
+          </div>
+          <div class="demo-stage" data-demo="focus">
+            <div class="d-focus">
+              <div class="glass focus-main">
+                <small>Focus · round 2 of 4</small>
+                <div class="num big-num" data-clock>17:42</div>
+                <div class="bar"><i data-progress style="width:30%;background:#fff"></i></div>
+              </div>
+              <div class="d-side">
+                <div class="glass mini-row"><span>Tea</span><b data-tea>3:10</b></div>
+                <div class="glass mini-row music"><i class="art"></i><span class="grow">Deep work mix<small data-music>Playing</small></span><i class="wave"><b></b><b></b><b></b><b></b></i></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Presenting -->
+        <article class="demo-card glass reveal">
+          <div class="demo-copy">
+            <span class="eyebrow" style="color:var(--attention)">Presenting</span>
+            <h3>Share your screen without worry.</h3>
+            <p>Press ⌥P and everything private in the notch is hidden until you're done. Mute your mic from anywhere with ⌥M.</p>
+          </div>
+          <div class="demo-stage" data-demo="present">
+            <div class="mini-screen">
+              <div class="notch"></div>
+              <div class="d-peek" data-peek><span data-left>Send the offer · overdue</span><span data-right>12m</span></div>
+              <div class="keys"><kbd>⌥</kbd><kbd>P</kbd></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agents -->
+  <section id="agents" class="pad" style="background:linear-gradient(180deg,transparent,rgba(161,150,252,.06) 30%,transparent)">
+    <div class="wrap agents">
+      <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:18px" class="reveal">
+        <span class="eyebrow" style="color:var(--o-purple)">Agents</span>
+        <h2 class="h2">Give Claude Code a job. Approve it from the notch.</h2>
+        <p class="lead">Pick a project, say what to do and keep working. You see each step as it happens. When it wants to edit a file or run a command, you get Allow or Deny right in the notch.</p>
+        <p class="lead" style="font-size:16px">Sessions you start in your terminal ask in the notch too, and scripts can show progress there with the orbit command.</p>
+      </div>
+      <div style="flex:1 1 480px;min-width:0" class="reveal">
+        <div class="agent-window glass" data-demo="agent">
+          <div class="aw-head"><orbit-character size="34" color="Original" motion="working" data-orbit></orbit-character><span class="grow"><b>website</b><small data-state>Working</small></span><span class="pill-g glass">Stop</span></div>
+          <div class="aw-body">
+            <div class="bubble-me glass-hi">Fix the failing checkout test</div>
+            <div class="aw-steps" data-steps>
+              <div class="aw-step"><i>›</i>Reading checkout.test.ts</div>
+              <div class="aw-step"><i>›</i>Editing price.ts</div>
+            </div>
+            <div class="aw-allow" data-allow>
+              <b>Allow? Running npm test</b>
+              <code>npm test</code>
+              <div class="row"><span class="pill-g glass">Deny</span><span class="pill-w" data-allow-btn>Allow</span></div>
+            </div>
+            <div class="aw-done" data-result><i class="dot" style="background:var(--live)"></i>12 tests pass. The price helper forgot VAT.</div>
+          </div>
+          <svg class="cursor" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 2-3 6z" fill="#fff" stroke="#000" stroke-width="1.2"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bots -->
+  <section id="bots" class="pad" style="padding-top:60px;background:linear-gradient(180deg,transparent,rgba(255,176,32,.05) 40%,transparent)">
+    <div class="wrap agents">
+      <div style="flex:1 1 480px;min-width:0" class="reveal">
+        <div class="agent-window glass">
+          <div class="aw-head"><orbit-character size="34" color="Bluey" motion="nudge"></orbit-character><span class="grow"><b>Account Manager</b><small>Needs your OK</small></span><span class="pill-g glass">Mon–Fri 09:00</span></div>
+          <div class="aw-body">
+            <div class="aw-steps">
+              <div class="aw-step"><i>›</i>Checked customer replies</div>
+              <div class="aw-step"><i>›</i>Found 3 quiet deals</div>
+              <div class="aw-step"><i>›</i>Drafted a follow-up</div>
+            </div>
+            <div class="aw-allow">
+              <b>Send this follow-up to Anna at Northwind?</b>
+              <code>Hi Anna, just checking in on the proposal from last week…</code>
+              <div class="row"><span class="pill-g glass">Skip</span><span class="pill-g glass">Edit</span><span class="pill-w">Send</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:18px" class="reveal">
+        <span class="eyebrow" style="color:var(--attention)">Bots</span>
+        <h2 class="h2">AI teammates that report back in the notch.</h2>
+        <p class="lead">Bots work on a schedule while you get on with your day. Chief of Staff briefs you every morning and preps you before meetings. Account Manager follows up on quiet deals and customer replies. Inbox reads your mail and turns it into tasks. Or write your own.</p>
+        <p class="lead" style="font-size:16px">Anything that changes something, like an email or a CRM note, waits for your OK in the notch or on your phone. Bots remember what you tell them, hand work to each other, and stay within a monthly cap you set.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Everything: chips that switch the description -->
+  <section id="everything" class="pad" style="padding-top:60px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="color:var(--o-orange)">Everything in one notch</span>
+        <h2 class="h2">One notch. Every tool.</h2>
+      </div>
+      <div class="picker everything reveal" role="tablist" aria-label="Features" id="feature-tabs"></div>
+      <div class="feature-panel glass reveal" role="tabpanel" id="feature-panel" aria-live="polite">
+        <span class="ico" id="feature-ico"></span>
+        <div><h3 id="feature-title"></h3><p id="feature-text"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-ons -->
+  <section id="addons" class="pad" style="padding-top:60px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="color:var(--o-mint)">Add-ons</span>
+        <h2 class="h2">Make the notch yours.</h2>
+        <p class="lead">35 add-ons in seven categories, with more every month. Add the ones you want: they open from the Add-ons tab, pin your favourites to the tab bar, and most add a Home widget.</p>
+      </div>
+      <div class="cat-grid" id="cat-grid"></div>
+      <div class="actions" style="margin-top:34px"><a class="btn btn-glass glass" href="addons.html">Browse all add-ons</a></div>
+    </div>
+  </section>
+
+  <!-- Developers -->
+  <section id="developers" class="pad" style="padding-top:40px">
+    <div class="wrap dev-split">
+      <div class="reveal" style="flex:1 1 420px;display:flex;flex-direction:column;gap:18px">
+        <span class="eyebrow" style="color:var(--claude)">Open source · For developers</span>
+        <h2 class="h2">Build for the notch.</h2>
+        <p class="lead">Orbit is open source. Write an add-on in any language: a script that prints JSON becomes a Home widget, a tab and a peek chip. Or build a full add-on in Swift. The best community add-ons are included in Pro, and their makers get paid.</p>
+        <div class="actions" style="justify-content:flex-start"><a class="btn btn-primary" href="developers.html">Start building</a><a class="btn btn-glass glass" href="[REPO URL]">View on GitHub</a></div>
+      </div>
+      <div class="reveal" style="flex:1 1 460px;min-width:0">
+        <div class="terminal">
+          <div class="bar-top"><span style="background:#FF5F57"></span><span style="background:#FEBC2E"></span><span style="background:#28C840"></span></div>
+          <pre><span class="c-mute"># Widgets/battery/widget.json</span>
+{ <span class="c-p">"name"</span>: "Battery", <span class="c-p">"run"</span>: "run.sh", <span class="c-p">"interval"</span>: 120 }
+
+<span class="c-mute"># run.sh prints one line of JSON</span>
+{ <span class="c-p">"value"</span>: "84%", <span class="c-p">"progress"</span>: 0.84,
+  <span class="c-p">"chip"</span>: "84%", <span class="c-p">"attention"</span>: "" }</pre>
+        </div>
+        <p style="margin-top:14px;font-size:14px;color:var(--text-3)">Script add-ons only run after you approve them, and again whenever their script changes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="pad" style="padding-top:60px;padding-bottom:60px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="color:var(--live)">Private by design</span>
+        <h2 class="h2">Your day stays on your Mac.</h2>
+      </div>
+      <div class="grid-3">
+        <article class="feat card glass reveal"><h3>No account</h3><p>Tasks, notes and the shelf are saved on your Mac. There's nothing to sign up for.</p></article>
+        <article class="feat card glass reveal"><h3>Your keys, your Keychain</h3><p>Claude, HubSpot and GitHub use keys you paste in yourself, kept in the macOS Keychain.</p></article>
+        <article class="feat card glass reveal"><h3>You approve every change</h3><p>Agents and Smart Ask ask before editing files or changing your CRM. No answer means no.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pad" style="padding-top:80px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="color:var(--o-purple)">Pricing</span>
+        <h2 class="h2">Start free. Go Pro when you're hooked.</h2>
+      </div>
+      <div class="grid-3" style="max-width:760px;margin:0 auto">
+        <article class="price card glass reveal">
+          <h3 style="font-size:28px">Free</h3>
+          <span class="amount">$0</span>
+          <p style="color:var(--text-2)">Everything you need every day. No account, no time limit.</p>
+          <ul><li>Music and meetings with Join</li><li>Tasks with HubSpot, timers and focus</li><li>Notes, shelf, AirDrop and convert</li><li>Agents: Claude Code from the notch</li><li>Bots and Smart Ask with your own Claude or ChatGPT key</li><li>24 add-ons, plus community add-ons</li></ul>
+          <a class="btn btn-glass glass" href="#download" style="margin-top:auto">Download free</a>
+        </article>
+        <article class="price card glass-hi reveal" style="box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(161,150,252,.5),0 30px 60px rgba(161,150,252,.12)">
+          <span class="tier-badge" style="align-self:flex-start">Most popular</span>
+          <h3 style="font-size:28px">Pro</h3>
+          <span class="amount">$12<small style="font-size:16px;font-weight:500;color:var(--text-2)"> / month</small></span>
+          <p style="color:var(--text-2)">Cancel any time. Prices exclude VAT where it applies.</p>
+          <ul><li>Everything in Free</li><li>Bots without your own API keys: AI use included</li><li>Approve bots from your phone, with notifications</li><li>Every Pro add-on: Summarize, Rewrite, Translate, Action Items, Day Timeline, Screen Time, Authenticator, Security Checkup and more</li><li>Community Pro add-ons</li></ul>
+          <a class="btn btn-primary" href="#download" style="margin-top:auto">Get Pro</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="pad" style="padding-top:40px">
+    <div class="wrap">
+      <h2 class="h2 reveal" style="text-align:center;margin-bottom:36px">Questions</h2>
+      <div class="faq">
+        <details class="glass reveal"><summary>Do I need a MacBook with a notch?<span class="plus" aria-hidden="true">+</span></summary><p>No. On screens without a notch, like an external display, Orbit floats as a glass pill just below the menu bar and works the same way.</p></details>
+        <details class="glass reveal"><summary>Which macOS do I need?<span class="plus" aria-hidden="true">+</span></summary><p>macOS 14 Sonoma or later. On macOS 26 you get Apple's Liquid Glass; on older versions, a frosted blur.</p></details>
+        <details class="glass reveal"><summary>Does anything leave my Mac?<span class="plus" aria-hidden="true">+</span></summary><p>Only what you connect yourself: Smart Ask and bots talk to Claude or ChatGPT, Tasks talks to HubSpot with your token, and Agents reads your GitHub reviews. With Pro, bot requests go through Orbit's server to the AI provider and aren't stored there. Everything else stays local.</p></details>
+        <details class="glass reveal"><summary>Can bots do things without asking?<span class="plus" aria-hidden="true">+</span></summary><p>Not unless you let them. Bots start by asking before every change. After you've approved the same kind of action a few times, Orbit offers to trust it, and even then you can undo it for 10 minutes. Bots only touch HubSpot deals you own.</p></details>
+        <details class="glass reveal"><summary>What does Pro add if I have my own API key?<span class="plus" aria-hidden="true">+</span></summary><p>Bots work with your own key for free. Pro adds the Pro add-ons and approvals on your phone, and bots can run on Orbit's keys so you don't need an API account or a second bill.</p></details>
+        <details class="glass reveal"><summary>Can agents change my files on their own?<span class="plus" aria-hidden="true">+</span></summary><p>No. Every edit and command needs your Allow in the notch. If you don't answer, it isn't allowed.</p></details>
+        <details class="glass reveal"><summary>Which permissions does it ask for?<span class="plus" aria-hidden="true">+</span></summary><p>Only the ones a feature needs, when you first use it: Calendar for meetings, Screen Recording for capture, Camera for the mirror and Microphone for mic safety.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" id="download">
+    <div class="rings" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="wrap" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:24px">
+      <span class="app-icon big" aria-hidden="true"><orbit-character size="96" color="White" motion="still"></orbit-character></span>
+      <h2 style="font-size:clamp(46px,7vw,92px);line-height:.95;letter-spacing:-0.045em">Put your day in the notch.</h2>
+      <p class="lead" style="text-align:center">Free to start. Takes a minute to set up.</p>
+      <a class="btn btn-primary" href="[DOWNLOAD URL]">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download for Mac</a>
+      <p class="meta">macOS 14 or later</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="year">2026</span> Orbit</span>
+    <nav aria-label="Footer"><a href="addons.html">Add-ons</a><a href="developers.html">Developers</a><a href="press.html">Press</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:[SUPPORT EMAIL]">Support</a></nav>
+  </div>
+</footer>
+</body>
+</html>

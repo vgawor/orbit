@@ -1,0 +1,10 @@
+{
+  "id": "hacker-news",
+  "name": "Hacker News",
+  "description": "Top five stories right now.",
+  "author": "Orbit",
+  "category": "developers",
+  "run": "run.py",
+  "interval": 900,
+  "symbol": "newspaper"
+}

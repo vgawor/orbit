@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>OrbitProRequired</key>
+	<false/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.viktorgawor.orbit</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>orbit</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleDisplayName</key>
+	<string>Orbit</string>
+	<key>CFBundleExecutable</key>
+	<string>Orbit</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.viktorgawor.orbit</string>
+	<key>CFBundleName</key>
+	<string>Orbit</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.2.3</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Orbit controls Music and Spotify playback from the notch.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_spotify-connect._tcp</string>
+	</array>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Orbit shows your next meeting and its Join button in the notch.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Orbit shows your camera in the notch so you can check how you look before a call (Mirror).</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Orbit looks for Spotify speakers on your network (Sonos, TVs, Cast speakers) so you can choose where Spotify plays.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Orbit listens for silence so it can pause your mic in calls (mic safety), and records your voice in screen recordings when you turn it on.</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/vgawor/orbit-releases/main/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>Xv39HB/4dt5s2dKgL5Y5ca9ui2T0ViE2lQ3e3efvWC0=</string>
+	<key>SpotifyClientID</key>
+	<string>4ba0ef14b4314d5abe0b54df0a0589ae</string>
+</dict>
+</plist>

@@ -1,0 +1,41 @@
+import Foundation
+
+extension SecurityKit {
+    /// Common, easy English words for passphrases (all lowercase, no repeats).
+    static let wordList: [String] = [
+        "apple", "arrow", "badge", "baker", "banjo", "beach", "bean", "bear", "bell", "berry", "bike", "bird",
+        "blanket", "bloom", "blue", "boat", "bone", "book", "boot", "bottle", "bread", "brick", "bridge",
+        "brook", "brush", "bubble", "bucket", "bunny", "butter", "button", "cabin", "cable", "cactus", "cake",
+        "camel", "camera", "candle", "candy", "canoe", "canyon", "card", "carpet", "carrot", "castle", "cat",
+        "cedar", "chair", "chalk", "cheese", "cherry", "chess", "chicken", "circle", "city", "clock", "cloud",
+        "clover", "coast", "cocoa", "coffee", "comet", "cookie", "copper", "coral", "corn", "cotton", "couch",
+        "cousin", "crane", "crayon", "cricket", "crown", "cup", "curtain", "daisy", "dance", "desert",
+        "diamond", "dinner", "dolphin", "donkey", "door", "dragon", "dream", "drum", "duck", "eagle", "earth",
+        "echo", "egg", "elbow", "engine", "fabric", "falcon", "farm", "feather", "fence", "fern", "field",
+        "finch", "fire", "fish", "flag", "flame", "flute", "forest", "fork", "fountain", "fox", "frog",
+        "fruit", "garden", "garlic", "gate", "ginger", "glass", "globe", "glove", "goat", "gold", "grape",
+        "grass", "guitar", "hammer", "harbor", "hat", "hazel", "heart", "hill", "honey", "horse", "house",
+        "island", "ivory", "jacket", "jam", "jelly", "jungle", "kettle", "key", "king", "kite", "kitten",
+        "ladder", "lake", "lamp", "lemon", "letter", "lily", "lion", "lizard", "llama", "lobster", "lunch",
+        "magnet", "mango", "maple", "marble", "meadow", "melon", "mint", "mirror", "monkey", "moon", "moose",
+        "mountain", "mouse", "muffin", "music", "nest", "night", "noodle", "ocean", "olive", "onion",
+        "orange", "orbit", "otter", "owl", "paddle", "paint", "panda", "paper", "parrot", "pasta", "peach",
+        "peanut", "pear", "pebble", "pencil", "pepper", "piano", "pickle", "pillow", "pilot", "pine", "pizza",
+        "planet", "plum", "pocket", "pond", "pony", "popcorn", "potato", "pumpkin", "puzzle", "quilt",
+        "rabbit", "radio", "rain", "rainbow", "raven", "ribbon", "river", "robin", "rocket", "roof", "rose",
+        "ruby", "saddle", "salad", "salmon", "sand", "scarf", "school", "seal", "shadow", "shell", "ship",
+        "shoe", "silver", "sky", "sled", "snow", "sock", "sofa", "spoon", "spring", "squash", "star", "stone",
+        "storm", "straw", "stream", "sugar", "summer", "sun", "swan", "sweater", "table", "taco", "tiger",
+        "toast", "tomato", "tooth", "towel", "tower", "train", "tree", "tulip", "turtle", "twig", "umbrella",
+        "valley", "velvet", "violin", "wagon", "walnut", "water", "whale", "wheat", "wheel", "window",
+        "winter", "wolf", "wood", "yarn", "zebra", "acorn", "anchor", "apron", "atlas", "bamboo", "basket",
+        "beacon", "blossom", "breeze", "cello", "cliff", "cobalt", "denim", "fiddle", "galaxy", "gravel",
+        "hiking", "igloo", "jigsaw", "kayak", "lantern", "lemonade", "lunar", "meteor", "nectar", "oatmeal",
+        "pajamas", "pretzel", "quartz", "raisin", "sapphire", "sequoia", "shovel", "spruce", "sunset",
+        "thunder", "tidal", "trumpet", "tundra", "vanilla", "waffle", "willow", "almond", "amber", "autumn",
+        "bagel", "balloon", "barley", "basil", "biscuit", "bonnet", "canvas", "cereal", "cinnamon", "compass",
+        "cupcake", "dune", "ember", "fossil", "glacier", "hedge", "helmet", "jasmine", "lagoon", "legend",
+        "marsh", "mitten", "nutmeg", "oasis", "pasture", "pebbles", "prairie", "puffin", "ripple", "saffron",
+        "sparrow", "tango", "thimble", "toffee", "voyage", "walrus",
+    ]
+}
