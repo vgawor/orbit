@@ -438,6 +438,7 @@
       <div class="faq">
         <details class="glass reveal"><summary>Do I need a MacBook with a notch?<span class="plus" aria-hidden="true">+</span></summary><p>No. On screens without a notch, like an external display, Orbit floats as a glass pill just below the menu bar and works the same way.</p></details>
         <details class="glass reveal"><summary>Which macOS do I need?<span class="plus" aria-hidden="true">+</span></summary><p>macOS 14 Sonoma or later. On macOS 26 you get Apple's Liquid Glass; on older versions, a frosted blur.</p></details>
+        <details class="glass reveal"><summary>Why does macOS warn me the first time?<span class="plus" aria-hidden="true">+</span></summary><p>Orbit isn't distributed through Apple's paid developer program, so macOS can't check it for you. Allow it once in System Settings → Privacy &amp; Security → Open Anyway. Orbit is open source, so you can read the code or build it yourself instead. Company-managed Macs may need IT to allow it.</p></details>
         <details class="glass reveal"><summary>Does anything leave my Mac?<span class="plus" aria-hidden="true">+</span></summary><p>Only what you connect yourself: Smart Ask and bots talk to Claude or ChatGPT, Tasks talks to HubSpot with your token, and Agents reads your GitHub reviews. With Pro, bot requests go through Orbit's server to the AI provider and aren't stored there. Everything else stays local.</p></details>
         <details class="glass reveal"><summary>Can bots do things without asking?<span class="plus" aria-hidden="true">+</span></summary><p>Not unless you let them. Bots start by asking before every change. After you've approved the same kind of action a few times, Orbit offers to trust it, and even then you can undo it for 10 minutes. Bots only touch HubSpot deals you own.</p></details>
         <details class="glass reveal"><summary>What does Pro add if I have my own API key?<span class="plus" aria-hidden="true">+</span></summary><p>Bots work with your own key for free. Pro adds the Pro add-ons and approvals on your phone, and bots can run on Orbit's keys so you don't need an API account or a second bill.</p></details>
@@ -454,10 +455,19 @@
       <span class="app-icon big" aria-hidden="true"><orbit-character size="96" color="White" motion="still"></orbit-character></span>
       <h2 style="font-size:clamp(46px,7vw,92px);line-height:.95;letter-spacing:-0.045em">Put your day in the notch.</h2>
       <p class="lead" style="text-align:center">Free to start. Takes a minute to set up.</p>
-      <a class="btn btn-primary" href="[DOWNLOAD URL]">
+      <a class="btn btn-primary" href="https://github.com/vgawor/orbit-releases/releases/latest">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Download for Mac</a>
       <p class="meta">macOS 14 or later</p>
+      <div class="glass first-open">
+        <h3>Opening Orbit the first time</h3>
+        <ol>
+          <li>Open the DMG and drag Orbit to Applications.</li>
+          <li>Open Orbit. macOS says it can't check it for malware. Click <b>Done</b>.</li>
+          <li>Go to <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
+        </ol>
+        <p>You only do this once. Updates install by themselves after that.</p>
+      </div>
     </div>
   </section>
 </main>

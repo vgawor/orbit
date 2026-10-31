@@ -1,5 +1,5 @@
 // Approvals on the phone. The Mac sends the approvals that wait for the user; new ones are stored
-// and pushed to his phones. The phone web app answers them straight in the database (its row
+// and pushed to their phones. The phone web app answers them straight in the database (its row
 // rules only allow answering your own pending approvals); the Mac picks up the answers.
 //
 // GET  /phone/vapid → the public key phones subscribe with.

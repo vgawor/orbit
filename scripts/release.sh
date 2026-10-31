@@ -136,7 +136,7 @@ if [ -f build/Orbit.app/Contents/.developer-id ]; then
     exit 1
   fi
 else
-  echo "Not notarized (no Developer ID certificate yet)."
+  echo "Not notarized (no Developer ID certificate)."
 fi
 
 # 3. Sign the DMG for Sparkle (with the private key in your Keychain).
@@ -195,9 +195,9 @@ Open the DMG and drag Orbit to Applications. Updates install by themselves."
 else
 RELEASE_NOTES="$NOTES
 
-**First time opening Orbit:** it isn't notarized by Apple yet, so macOS blocks it the first time.
-Open the DMG, drag Orbit to Applications, open it once, then go to System Settings → Privacy & Security
-and click **Open Anyway**. After that, updates install by themselves."
+**First time opening Orbit:** it isn't notarized by Apple, so macOS blocks it once.
+Open the DMG, drag Orbit to Applications and open it. Click Done on the warning, then go to
+System Settings → Privacy & Security and click **Open Anyway**. After that, updates install by themselves."
 fi
 if gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1; then
   gh release upload "$TAG" "$DMG" --repo "$REPO" --clobber

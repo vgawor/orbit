@@ -28,8 +28,9 @@ scripts/release.sh 0.3.0                 # build the DMG and the update-feed ent
 scripts/release.sh 0.3.0 --publish       # ...and publish them
 ```
 
-Releases are signed with Developer ID and notarized by Apple when that certificate is in the
-Keychain. Updates use Sparkle; the feed lives in the `orbit-releases` repository. The DMG opens as
+Releases are signed with your Apple Development certificate and aren't notarized, so people open
+Orbit the first time via Privacy & Security → Open Anyway. If a Developer ID certificate is ever in
+the Keychain, `release.sh` signs with it and notarizes automatically. Updates use Sparkle; the feed lives in the `orbit-releases` repository. The DMG opens as
 a designed Finder window drawn by `scripts/make-dmg-background.swift`.
 
 `scripts/publish-phone-app.sh` publishes the phone web app (`web/app`) to GitHub Pages.

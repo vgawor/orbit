@@ -499,3 +499,9 @@ kbd.down { transform: translateY(2px); background: rgba(255,255,255,.22); }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* First-open steps under the download button */
+.first-open{max-width:520px;margin-top:8px;padding:22px 26px;border-radius:20px;text-align:left}
+.first-open h3{font-size:17px;margin:0 0 10px}
+.first-open ol{margin:0 0 10px;padding-left:20px;display:grid;gap:6px}
+.first-open p{margin:0;opacity:.7;font-size:14px}

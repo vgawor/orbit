@@ -5,8 +5,13 @@ agents and bots. Hover to peek, click to open, and Orbit nudges you when somethi
 
 macOS 14 or later, with or without a notch. Liquid Glass on macOS 26.
 
-**Download:** the latest signed build is on the [releases page](https://github.com/vgawor/orbit-releases/releases).
+**Download:** the latest build is on the [releases page](https://github.com/vgawor/orbit-releases/releases).
 It updates itself.
+
+**Opening it the first time:** Orbit isn't notarized by Apple, so macOS blocks it once. Open
+Orbit, click Done on the warning, then go to System Settings → Privacy & Security and click
+**Open Anyway**. You only do this once. Company-managed Macs may need IT to allow it, or you can
+build it from source (below).
 
 ## What's inside
 
