@@ -18,7 +18,7 @@ PRIVATE=(
   docs/COMMUNITY.md docs/BOTS-PLAN.md design/ promo/ .public-export-blocklist
 )
 # Allowed on purpose: the app's id and the company that publishes it, the update feed, contact address.
-ALLOWED='com\.viktorgawor\.orbit|se\.visualised|Copyright 2026 Viktor Gawor|of Viktor Gawor\.|to Viktor Gawor\.|vgawor/orbit-releases|vgawor\.github\.io/orbit-releases|contains\("Visualised"\)'
+ALLOWED='com\.viktorgawor\.orbit|se\.visualised|Copyright 2026 Viktor Gawor|of Viktor Gawor\.|to Viktor Gawor\.|vgawor/orbit-releases|vgawor/orbit[/?)"]|vgawor\.github\.io/orbit-releases|contains\("Visualised"\)'
 
 mkdir -p "$DEST"
 LIST="$(mktemp)"
