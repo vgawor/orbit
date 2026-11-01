@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # Builds Orbit and wraps it into build/Orbit.app.
 # Signs with your Apple Development certificate when there is one (stable identity across
-# rebuilds), otherwise ad hoc. Set VIKTOR_SIGN_ID to pick a specific identity, or "-" for ad hoc.
+# rebuilds), otherwise ad hoc. Set ORBIT_SIGN_ID to pick a specific identity, or "-" for ad hoc.
 # Set ORBIT_VERSION (e.g. 0.2.0) and ORBIT_BUILD (a whole number that only goes up) for releases.
-# The viktor command-line tool is bundled at Orbit.app/Contents/Helpers/viktor.
+# The orbit command-line tool is bundled at Orbit.app/Contents/Helpers/orbit, with "viktor" (its old
+# name) as a link to it, so Claude Code hooks set up by older versions keep working.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 CONFIG="${1:-release}"
@@ -12,8 +13,9 @@ BIN_DIR="$(swift build -c "$CONFIG" --show-bin-path)"
 APP="build/Orbit.app"
 rm -rf "$APP" build/Viktor.app
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources" "$APP/Contents/Helpers" "$APP/Contents/Frameworks"
-cp "$BIN_DIR/Viktor" "$APP/Contents/MacOS/Orbit"
-cp "$BIN_DIR/viktor-cli" "$APP/Contents/Helpers/viktor"
+cp "$BIN_DIR/Orbit" "$APP/Contents/MacOS/Orbit"
+cp "$BIN_DIR/orbit-cli" "$APP/Contents/Helpers/orbit"
+ln -s orbit "$APP/Contents/Helpers/viktor"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
 cp Resources/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
 
@@ -35,7 +37,7 @@ install_name_tool -add_rpath "@executable_path/../Frameworks" "$APP/Contents/Mac
 identity() { security find-identity -v -p codesigning 2>/dev/null | sed -n "s/.*\"\($1[^\"]*\)\".*/\1/p" | head -1; }
 DEV_ID=""
 [ "${ORBIT_RELEASE:-0}" = "1" ] && DEV_ID="$(identity "Developer ID Application")"
-SIGN_ID="${VIKTOR_SIGN_ID:-${DEV_ID:-$(identity "Apple Development")}}"
+SIGN_ID="${ORBIT_SIGN_ID:-${VIKTOR_SIGN_ID:-${DEV_ID:-$(identity "Apple Development")}}}"
 
 # Developer ID: what notarization needs. A secure timestamp and the hardened runtime on every piece
 # of code, signed inside out (Sparkle's helpers first, as Sparkle's docs describe).
@@ -47,7 +49,7 @@ sign_distribution() {
   "${cs[@]}" "$fw/Autoupdate" &&
   "${cs[@]}" "$fw/Updater.app" &&
   "${cs[@]}" "$APP/Contents/Frameworks/Sparkle.framework" &&
-  "${cs[@]}" "$APP/Contents/Helpers/viktor" &&
+  "${cs[@]}" "$APP/Contents/Helpers/orbit" &&
   "${cs[@]}" --entitlements Resources/Orbit.entitlements "$APP" &&
   codesign --verify --deep --strict "$APP"
 }
@@ -60,10 +62,10 @@ sign() {
   # skip it: the hardened runtime refuses to load an ad hoc signed Sparkle.framework.
   "${cs[@]}" --deep "$APP/Contents/Frameworks/Sparkle.framework" >/dev/null 2>&1 || return 1
   if [ "$1" != "-" ] && [ "${ORBIT_HARDENED:-1}" = "1" ]; then
-    "${cs[@]}" --options runtime "$APP/Contents/Helpers/viktor" >/dev/null 2>&1 &&
+    "${cs[@]}" --options runtime "$APP/Contents/Helpers/orbit" >/dev/null 2>&1 &&
     "${cs[@]}" --options runtime --entitlements Resources/Orbit.entitlements "$APP" >/dev/null 2>&1
   else
-    "${cs[@]}" "$APP/Contents/Helpers/viktor" >/dev/null 2>&1 &&
+    "${cs[@]}" "$APP/Contents/Helpers/orbit" >/dev/null 2>&1 &&
     "${cs[@]}" "$APP" >/dev/null 2>&1
   fi
 }

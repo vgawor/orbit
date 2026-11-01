@@ -3,7 +3,7 @@
 ## Build and test
 
 ```bash
-swift build --product Viktor      # the app
+swift build --product Orbit      # the app
 swift test                        # all tests
 scripts/smoke-test.sh             # tests + every screen rendered + CLI checks
 scripts/install.sh                # signed build into /Applications
@@ -15,7 +15,7 @@ permissions across rebuilds), otherwise ad hoc.
 ## See every screen without permissions
 
 ```bash
-VIKTOR_PREVIEW=1 .build/debug/Viktor --snapshot /tmp/shots
+ORBIT_PREVIEW=1 .build/debug/Orbit --snapshot /tmp/shots
 ```
 
 This renders every screen and add-on to PNGs with sample data. Add `--orbit-film` to render
@@ -39,10 +39,10 @@ a designed Finder window drawn by `scripts/make-dmg-background.swift`.
 
 | Folder | What's in it |
 |---|---|
-| `Viktor/` | The app (SwiftUI). Each feature is a `NotchModule`, registered in `ModuleRegistry` |
-| `Viktor/Bots/` | Bots: Claude Managed Agents or ChatGPT, approvals, memory |
-| `ViktorKit/` | Shared code for the app and the `viktor` command-line tool |
-| `ViktorCLI/` | The `viktor` tool |
+| `Orbit/` | The app (SwiftUI). Each feature is a `NotchModule`, registered in `ModuleRegistry` |
+| `Orbit/Bots/` | Bots: Claude Managed Agents or ChatGPT, approvals, memory |
+| `OrbitKit/` | Shared code for the app and the `orbit` command-line tool |
+| `OrbitCLI/` | The `orbit` tool |
 | `server/` | Orbit Pro: Supabase migrations and edge functions |
 | `web/app/` | The phone web app for approvals |
 | `website/` | The website (static, no build step) |

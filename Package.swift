@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "Viktor",
+    name: "Orbit",
     platforms: [.macOS(.v14)],
     products: [
-        .executable(name: "Viktor", targets: ["Viktor"]),
-        .executable(name: "viktor-cli", targets: ["ViktorCLI"]),
+        .executable(name: "Orbit", targets: ["Orbit"]),
+        .executable(name: "orbit-cli", targets: ["OrbitCLI"]),
     ],
     dependencies: [
         // Automatic updates for builds shipped outside the App Store.
@@ -14,11 +14,11 @@ let package = Package(
     ],
     targets: [
         // Shared by the app and the CLI: API config, message types, Claude hook installer.
-        .target(name: "ViktorKit", path: "ViktorKit"),
-        .executableTarget(name: "Viktor", dependencies: ["ViktorKit", .product(name: "Sparkle", package: "Sparkle")], path: "Viktor"),
-        .executableTarget(name: "ViktorCLI", dependencies: ["ViktorKit"], path: "ViktorCLI"),
+        .target(name: "OrbitKit", path: "OrbitKit"),
+        .executableTarget(name: "Orbit", dependencies: ["OrbitKit", .product(name: "Sparkle", package: "Sparkle")], path: "Orbit"),
+        .executableTarget(name: "OrbitCLI", dependencies: ["OrbitKit"], path: "OrbitCLI"),
         // Tests: `swift test`
-        .testTarget(name: "ViktorTests", dependencies: ["Viktor", "ViktorKit"], path: "Tests/ViktorTests"),
-        .testTarget(name: "ViktorKitTests", dependencies: ["ViktorKit"], path: "Tests/ViktorKitTests"),
+        .testTarget(name: "OrbitTests", dependencies: ["Orbit", "OrbitKit"], path: "Tests/OrbitTests"),
+        .testTarget(name: "OrbitKitTests", dependencies: ["OrbitKit"], path: "Tests/OrbitKitTests"),
     ]
 )

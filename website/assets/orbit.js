@@ -1,6 +1,6 @@
 // <orbit-character size="96" color="White" mood="normal" motion="idle" tint="#FFB020">
 // Orbit, the companion from the app: a ringed planet with two tilted eyes, drawn as SVG and
-// animated with SVG animations (same drawing, colours, moods and motions as Viktor/Views/Orbit.swift).
+// animated with SVG animations (same drawing, colours, moods and motions as Orbit/Views/Orbit.swift).
 
 const THEMES = {
   White:    { body: '#FFFFFF', ring: '#B9B6D3', eyes: '#16131F' },

@@ -138,14 +138,12 @@ through Orbit's server to the AI provider and aren't stored there.
 You need Xcode 26 (or its command line tools) on macOS 14 or later.
 
 ```bash
-swift build --product Viktor    # the app
+swift build --product Orbit     # the app
 swift test                      # all tests
 scripts/install.sh              # build Orbit.app and put it in /Applications
 ```
 
 More in [docs/DEVELOPING.md](docs/DEVELOPING.md): screen snapshots, signing and releases.
-The app is called Orbit; the source still uses its first working name, Viktor, for folders,
-types and the `viktor` command-line tool.
 
 ## Contributing
 

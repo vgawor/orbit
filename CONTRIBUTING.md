@@ -9,12 +9,12 @@ Thanks for helping. Bug reports, fixes, new add-ons and better wording are all w
 - **Bigger changes and new features:** open an issue first, so we can agree on the idea before
   you spend time on it.
 - **Add-ons:** script add-ons can live in your own repository; see [docs/SDK.md](docs/SDK.md).
-  Swift add-ons go in `Viktor/Modules/AddOns/<Category>/`.
+  Swift add-ons go in `Orbit/Modules/AddOns/<Category>/`.
 
 ## Making a change
 
 1. Fork the repository and make a branch.
-2. Build and test: `swift build --product Viktor` and `swift test`.
+2. Build and test: `swift build --product Orbit` and `swift test`.
    `scripts/smoke-test.sh` also renders every screen, which catches layout problems.
 3. Keep the style of the code around you. Comments and interface text are short, plain English.
 4. Open a pull request saying what changed and why. Add a screenshot for anything visible.

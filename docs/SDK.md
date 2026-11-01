@@ -91,7 +91,7 @@ If the script prints other lines first (logging), Orbit uses the last line that 
 ### Try the examples
 
 ```bash
-cp -R sdk/examples/battery ~/Library/Application\ Support/Viktor/Widgets/
+cp -R sdk/examples/battery ~/Library/Application\ Support/Orbit/Widgets/
 ```
 
 Restart Orbit, open **Settings → Add-ons**, add **Battery**, open its tab and press **Trust & run**.
@@ -103,7 +103,7 @@ Examples in `sdk/examples/`:
 
 ## Swift add-ons
 
-Swift add-ons live in the app's source, `Viktor/Modules/AddOns/<Category>/`.
+Swift add-ons live in the app's source, `Orbit/Modules/AddOns/<Category>/`.
 
 1. Make a class that conforms to `AddOnModule`:
 
@@ -127,8 +127,8 @@ final class HelloAddOn: AddOnModule {
    `GlassPillButton`, `AddOnHeader`, `NotchScroll`, `Tokens`.
 4. Save data with `Storage.save(_:to:)`, secrets with `Secrets.set(_:for:)`, and nudge with
    `ctx.alerts.post(NotchAlert(...))`.
-5. Add tests for your logic in `Tests/ViktorTests/`, then render your panel to a PNG:
-   `VIKTOR_PREVIEW=1 .build/debug/Viktor --snapshot /tmp/shots` writes `addon-<id>.png`.
+5. Add tests for your logic in `Tests/OrbitTests/`, then render your panel to a PNG:
+   `ORBIT_PREVIEW=1 .build/debug/Orbit --snapshot /tmp/shots` writes `addon-<id>.png`.
 6. Open a pull request. See CONTRIBUTING.md and the checklist below.
 
 ## Review checklist (for both kinds)

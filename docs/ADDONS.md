@@ -2,7 +2,7 @@
 
 Orbit is a set of small apps (modules), integrations and Home widgets that live in the notch.
 This plan grows it into seven categories. Each has 20 ideas; the **5 in bold are built** (in the
-app under `Viktor/Modules/AddOns/<Category>/`, added from **Settings → Add-ons**).
+app under `Orbit/Modules/AddOns/<Category>/`, added from **Settings → Add-ons**).
 
 Tier: **F** = Free, **P** = Pro. AI add-ons use the person's own Claude key.
 

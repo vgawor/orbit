@@ -7,17 +7,17 @@ service. Two years after each version is published, that version also becomes Ap
 
 Files under this licence:
 
-- `Viktor/Modules/AddOns/AI/ActionItemsAddOn.swift`
-- `Viktor/Modules/AddOns/AI/RewriteAddOn.swift`
-- `Viktor/Modules/AddOns/AI/SummarizeAddOn.swift`
-- `Viktor/Modules/AddOns/AI/TranslateAddOn.swift`
-- `Viktor/Modules/AddOns/Developers/GitHubActionsAddOn.swift`
-- `Viktor/Modules/AddOns/Developers/UptimeAddOn.swift`
-- `Viktor/Modules/AddOns/Finance/WatchlistAddOn.swift`
-- `Viktor/Modules/AddOns/Health/ScreenTimeAddOn.swift`
-- `Viktor/Modules/AddOns/Productivity/DayTimelineAddOn.swift`
-- `Viktor/Modules/AddOns/Security/AuthenticatorAddOn.swift`
-- `Viktor/Modules/AddOns/Security/CheckupAddOn.swift`
+- `Orbit/Modules/AddOns/AI/ActionItemsAddOn.swift`
+- `Orbit/Modules/AddOns/AI/RewriteAddOn.swift`
+- `Orbit/Modules/AddOns/AI/SummarizeAddOn.swift`
+- `Orbit/Modules/AddOns/AI/TranslateAddOn.swift`
+- `Orbit/Modules/AddOns/Developers/GitHubActionsAddOn.swift`
+- `Orbit/Modules/AddOns/Developers/UptimeAddOn.swift`
+- `Orbit/Modules/AddOns/Finance/WatchlistAddOn.swift`
+- `Orbit/Modules/AddOns/Health/ScreenTimeAddOn.swift`
+- `Orbit/Modules/AddOns/Productivity/DayTimelineAddOn.swift`
+- `Orbit/Modules/AddOns/Security/AuthenticatorAddOn.swift`
+- `Orbit/Modules/AddOns/Security/CheckupAddOn.swift`
 
 ---
 

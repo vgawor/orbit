@@ -29,7 +29,7 @@ Tick these off once. Repeat a row only when that feature changes.
 | ☐ | Meeting prep | Click Prep on the next meeting (needs the Claude key) | A short brief with HubSpot info on the attendees. |
 | ☐ | Morning brief | Home → Today card with the Claude key added | A few lines about your day. |
 | ☐ | Smart Ask | Click Dot and ask "add a task to call Anna tomorrow 10" | It asks for confirmation, then the task appears. |
-| ☐ | HubSpot tasks | Tick a HubSpot task | It's marked done in HubSpot and stays ticked in Viktor until tomorrow. |
+| ☐ | HubSpot tasks | Tick a HubSpot task | It's marked done in HubSpot and stays ticked in Orbit until tomorrow. |
 | ☐ | HubSpot create | Tasks → + → HubSpot form, with a project and a contact | The task exists in HubSpot with the right project and contact. |
 | ☐ | Timers | Start 5 min, 15 min and a custom timer together | All three count down. Each one alerts when it's done. |
 | ☐ | Focus playlist | Set a Spotify playlist, start focus, wait for a break | It plays during focus and pauses on breaks. |
@@ -43,7 +43,7 @@ Tick these off once. Repeat a row only when that feature changes.
 | ☐ | Prompter | Paste text and start | The text scrolls under the notch at a readable width. |
 | ☐ | Presenting mode | Click the eye icon, then share your screen | Notch content and pop-ups stay hidden. |
 | ☐ | Hotkeys | ⌥Space, ⌥K, ⌥P, ⌥M | Open/close, Ask, Presenting and Mic all respond. |
-| ☐ | Launch at login | Turn it on in Settings, then restart the Mac | Viktor starts by itself. |
+| ☐ | Launch at login | Turn it on in Settings, then restart the Mac | Orbit starts by itself. |
 | ☐ | Agent task | Agents → New agent task, pick a project folder, "add a README line saying hello" | A coloured Orbit starts working; the chat shows what Claude does. |
 | ☐ | Agent approval | Same task, when Claude wants to edit a file | "Allow? Editing README.md" pops up in the notch and in the chat. Allow continues, Deny stops that step. |
 | ☐ | Agent follow-up | After it's done, type "now undo that" in the chat | The same session continues. |

@@ -52,7 +52,6 @@ Replace the placeholders:
 - `[SUPPORT EMAIL]`: the support address
 - `#privacy`, `#terms`: link to real pages
 
-The page shows the command as `orbit`; the tool is still called `viktor` until the app is renamed.
 
 ## Publishing
 

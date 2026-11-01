@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Builds Orbit, installs it to /Applications and restarts it.
-# Also points ~/.local/bin/viktor (used by the Claude Code hooks) at the installed copy.
+# Also points ~/.local/bin/orbit (used by the Claude Code hooks) at the installed copy.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 ./scripts/build-app.sh
-if [ -f build/Orbit.app/Contents/.signing-failed ] && [ "${VIKTOR_ALLOW_ADHOC:-}" != "1" ]; then
+if [ -f build/Orbit.app/Contents/.signing-failed ] && [ "${ORBIT_ALLOW_ADHOC:-${VIKTOR_ALLOW_ADHOC:-}}" != "1" ]; then
   echo "Not installed: signing with your certificate failed (macOS may be waiting for permission)."
-  echo "Run this script from Terminal and choose Always Allow, or set VIKTOR_ALLOW_ADHOC=1."
+  echo "Run this script from Terminal and choose Always Allow, or set ORBIT_ALLOW_ADHOC=1."
   exit 1
 fi
 rm -f build/Orbit.app/Contents/.signing-failed
@@ -21,7 +21,11 @@ fi
 rm -rf "$DEST"
 cp -R build/Orbit.app "$DEST"
 mkdir -p "$HOME/.local/bin"
-if [ -L "$HOME/.local/bin/viktor" ] || [ ! -e "$HOME/.local/bin/viktor" ]; then
+if [ -L "$HOME/.local/bin/orbit" ] || [ ! -e "$HOME/.local/bin/orbit" ]; then
+  ln -sfn "$DEST/Contents/Helpers/orbit" "$HOME/.local/bin/orbit"
+fi
+# Older versions linked ~/.local/bin/viktor; keep it working (Helpers/viktor links to orbit).
+if [ -L "$HOME/.local/bin/viktor" ]; then
   ln -sfn "$DEST/Contents/Helpers/viktor" "$HOME/.local/bin/viktor"
 fi
 open "$DEST"

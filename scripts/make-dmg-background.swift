@@ -28,7 +28,7 @@ func glow(_ ctx: CGContext, at c: CGPoint, radius r: CGFloat, color: NSColor, al
     ctx.drawRadialGradient(g, startCenter: c, startRadius: 0, endCenter: c, endRadius: r, options: [])
 }
 
-/// Orbit, as in Viktor/Views/Orbit.swift: white planet, lilac ring tilted 24°, two tilted eyes.
+/// Orbit, as in Orbit/Views/Orbit.swift: white planet, lilac ring tilted 24°, two tilted eyes.
 /// Drawn in a 100×100 design space centred on `c`, `size` points wide. y grows downwards.
 func drawOrbit(_ ctx: CGContext, center c: CGPoint, size: CGFloat, tilt: CGFloat) {
     let u = size / 104

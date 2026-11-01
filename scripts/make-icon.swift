@@ -1,6 +1,6 @@
 // Draws Orbit's app icon (Orbit the planet on a dark glass squircle) and writes the iconset.
 // Run: swift scripts/make-icon.swift && iconutil -c icns build/AppIcon.iconset -o Resources/AppIcon.icns
-// Orbit's shape matches OrbitView in Viktor/Views/Orbit.swift (a 104-unit grid, ring tilted 24°).
+// Orbit's shape matches OrbitView in Orbit/Views/Orbit.swift (a 104-unit grid, ring tilted 24°).
 import AppKit
 
 func rgb(_ v: UInt32, _ a: CGFloat = 1) -> CGColor {
