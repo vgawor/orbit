@@ -34,6 +34,8 @@ rsync -a --delete --exclude .git --files-from="$LIST" ./ "$DEST/"
   grep -qxF "$f" "$LIST" || rm -f "$DEST/$f"
 done
 rm -f "$LIST"
+# Folders left empty by moved or deleted files.
+find "$DEST" -mindepth 1 -type d -empty -not -path "*/.git/*" -delete
 
 # Check the copy.
 BAD=0
